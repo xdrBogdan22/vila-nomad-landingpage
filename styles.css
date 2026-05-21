@@ -323,7 +323,7 @@ h3 {
   backdrop-filter: blur(20px);
 }
 
-.hero-facts div {
+.hero-facts > div {
   position: relative;
   min-height: 126px;
   overflow: hidden;
@@ -336,7 +336,7 @@ h3 {
   box-shadow: 0 14px 32px rgba(44, 36, 30, 0.1);
 }
 
-.hero-facts div::after {
+.hero-facts > div::after {
   position: absolute;
   right: 18px;
   bottom: 18px;
@@ -373,6 +373,75 @@ h3 {
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.hero-facts .booking-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    radial-gradient(circle at 88% 10%, rgba(0, 113, 194, 0.12), transparent 36%),
+    linear-gradient(180deg, #fff 0%, #f7fbff 100%);
+}
+
+.booking-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hero-facts .booking-wordmark {
+  color: #003b95;
+  font-size: 1rem;
+  font-weight: 950;
+  letter-spacing: 0;
+}
+
+.hero-facts .booking-stars {
+  color: #febb02;
+  font-size: 0.86rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.booking-score-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.hero-facts .booking-score {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  place-items: center;
+  border-radius: 8px 8px 8px 0;
+  background: #003b95;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  margin: 0;
+}
+
+.booking-copy {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.hero-facts .booking-copy b {
+  color: var(--ink);
+  font-size: 1.18rem;
+  line-height: 1.05;
+}
+
+.hero-facts .booking-copy small {
+  color: var(--muted-ink);
+  font-size: 0.9rem;
+  font-weight: 750;
 }
 
 .section-band {
