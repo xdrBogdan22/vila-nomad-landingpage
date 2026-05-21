@@ -634,11 +634,16 @@ h3 {
 
 .score-board div,
 .distance-grid div {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.78);
   padding: 20px;
   box-shadow: 0 12px 30px rgba(44, 36, 30, 0.08);
+  text-align: center;
 }
 
 .score-board span,
@@ -646,6 +651,7 @@ h3 {
   display: block;
   color: var(--muted-ink);
   font-weight: 750;
+  text-align: center;
 }
 
 .score-board strong,
@@ -654,6 +660,7 @@ h3 {
   color: var(--ink);
   font-size: 2rem;
   line-height: 1;
+  text-align: center;
 }
 
 .distance-grid {
