@@ -382,25 +382,24 @@ h3 {
 }
 
 .hero-facts .booking-review {
-  justify-content: center;
-  gap: 18px;
   background:
-    radial-gradient(circle at 88% 10%, rgba(0, 113, 194, 0.12), transparent 36%),
-    linear-gradient(180deg, #fff 0%, #f7fbff 100%);
+    radial-gradient(circle at 88% 12%, rgba(0, 113, 194, 0.12), transparent 34%),
+    linear-gradient(180deg, #fffaf4 0%, #f5eee6 100%);
 }
 
-.booking-topline {
+.hero-facts .booking-label {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px;
-  width: 100%;
+  gap: 8px 10px;
+  background: rgba(0, 59, 149, 0.08);
+  color: #003b95;
 }
 
 .hero-facts .booking-wordmark {
   color: #003b95;
-  font-size: 1rem;
+  font-size: 0.72rem;
   font-weight: 950;
   letter-spacing: 0;
 }
@@ -410,47 +409,6 @@ h3 {
   font-size: 0.86rem;
   letter-spacing: 0.08em;
   white-space: nowrap;
-}
-
-.booking-score-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  width: 100%;
-}
-
-.hero-facts .booking-score {
-  display: grid;
-  width: 64px;
-  height: 64px;
-  flex: 0 0 64px;
-  place-items: center;
-  border-radius: 8px 8px 8px 0;
-  background: #003b95;
-  color: #fff;
-  font-size: 2rem;
-  line-height: 1;
-  margin: 0;
-}
-
-.booking-copy {
-  display: grid;
-  gap: 2px;
-  min-width: 0;
-  text-align: left;
-}
-
-.hero-facts .booking-copy b {
-  color: var(--ink);
-  font-size: 1.18rem;
-  line-height: 1.05;
-}
-
-.hero-facts .booking-copy small {
-  color: var(--muted-ink);
-  font-size: 0.9rem;
-  font-weight: 750;
 }
 
 .section-band {
@@ -998,8 +956,8 @@ h3 {
   }
 
   .hero-facts div {
-    min-height: auto;
-    padding: 16px;
+    min-height: 132px;
+    padding: 18px 16px 30px;
   }
 
   .hero-facts strong {
