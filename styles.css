@@ -325,6 +325,10 @@ h3 {
 
 .hero-facts > div {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-height: 126px;
   overflow: hidden;
   border: 1px solid rgba(40, 37, 34, 0.09);
@@ -334,14 +338,16 @@ h3 {
     linear-gradient(180deg, #fffaf4 0%, #f5eee6 100%);
   padding: 20px;
   box-shadow: 0 14px 32px rgba(44, 36, 30, 0.1);
+  text-align: center;
 }
 
 .hero-facts > div::after {
   position: absolute;
-  right: 18px;
+  left: 50%;
   bottom: 18px;
   width: 34px;
   height: 3px;
+  transform: translateX(-50%);
   border-radius: 999px;
   background: var(--orange);
   content: "";
@@ -376,9 +382,8 @@ h3 {
 }
 
 .hero-facts .booking-review {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 18px;
   background:
     radial-gradient(circle at 88% 10%, rgba(0, 113, 194, 0.12), transparent 36%),
     linear-gradient(180deg, #fff 0%, #f7fbff 100%);
@@ -387,8 +392,10 @@ h3 {
 .booking-topline {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 12px;
+  width: 100%;
 }
 
 .hero-facts .booking-wordmark {
@@ -408,8 +415,9 @@ h3 {
 .booking-score-row {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 14px;
-  margin-top: 18px;
+  width: 100%;
 }
 
 .hero-facts .booking-score {
@@ -430,6 +438,7 @@ h3 {
   display: grid;
   gap: 2px;
   min-width: 0;
+  text-align: left;
 }
 
 .hero-facts .booking-copy b {
