@@ -1,9 +1,72 @@
 const photoCount = 59;
+const photoDescriptions = [
+  "Colț de relaxare cu fotolii și plante",
+  "Cameră dublă cu pat queen și prosoape pregătite",
+  "Intrarea proprietății de pe Strada Traian",
+  "Fațada vilei și balconul exterior",
+  "Alee pavată în curtea interioară",
+  "Terasă acoperită la intrare",
+  "Zonă de bar și living comun",
+  "Cameră dublă cu TV și dulap",
+  "Masă mare în livingul comun",
+  "Zonă de lounge cu canapele",
+  "Cameră luminoasă la mansardă",
+  "Living comun cu zonă de luat masa",
+  "Cameră dublă cu fereastră mare",
+  "Spațiu comun de luat masa",
+  "Scară interioară cu balustradă",
+  "Detaliu de servire în zona comună",
+  "Cameră dublă cu lumină naturală",
+  "Cameră dublă cu perete decorativ",
+  "Cameră dublă cu dulap și radiator",
+  "Cameră dublă cu oglindă și masă de lucru",
+  "Pat dublu lângă fereastră",
+  "Hol interior către camere",
+  "Balcon exterior cu scaune",
+  "Cameră cu acces către baie",
+  "Logo Vila Nomad Brașov",
+  "Cameră dublă spațioasă cu pardoseală din lemn",
+  "Cameră cu birou și fereastră",
+  "Scară și hol interior",
+  "Pat dublu pregătit pentru oaspeți",
+  "Colț de relaxare cu fotolii și plante",
+  "Detaliu decorativ în zona de bar",
+  "Cameră cu perete accent și pat dublu",
+  "Terasă exterioară cu scaune",
+  "Masă de lucru în cameră",
+  "Colț de birou și plante",
+  "Hol cu oglindă și acces către camere",
+  "Cameră dublă cu oglindă și dulap",
+  "Cameră cu TV, birou și dulap",
+  "Living comun cu mese și TV",
+  "Terasă și acces exterior",
+  "Scară interioară luminată",
+  "Detaliu decorativ cu candelabru",
+  "Cameră dublă spațioasă",
+  "Hol interior cu plante",
+  "Pat dublu cu prosoape pregătite",
+  "Coridor interior luminat",
+  "Cameră cu pat dublu și dulap",
+  "Baie privată cu duș și chiuvetă",
+  "Baie cu duș din sticlă și obiecte sanitare",
+  "Articole de baie pentru oaspeți",
+  "Baie cu cabină de duș și finisaje maro",
+  "Baie cu duș, chiuvetă și toaletă",
+  "Baie cu finisaje calde",
+  "Baie privată cu duș walk-in",
+  "Cameră cu TV și mobilier din lemn",
+  "Cameră cu TV și fereastră mare",
+  "Cameră cu acces către baie",
+  "Baie modernă cu oglindă și radiator",
+  "Cameră dublă cu oglindă și dressing",
+];
 const photos = Array.from({ length: photoCount }, (_, index) => {
   const number = String(index + 1).padStart(2, "0");
+  const description = photoDescriptions[index];
   return {
     src: `assets/photos/photo-${number}.jpeg`,
-    alt: `Fotografie ${index + 1} din galeria Vila Nomad Brașov`,
+    description,
+    alt: `Vila Nomad Brașov - ${description}`,
   };
 });
 
@@ -14,6 +77,7 @@ const lightboxCaption = document.querySelector("#lightboxCaption");
 const closeLightbox = document.querySelector("#closeLightbox");
 const prevPhoto = document.querySelector("#prevPhoto");
 const nextPhoto = document.querySelector("#nextPhoto");
+const galleryBand = document.querySelector("#galerie");
 let currentIndex = 0;
 
 function renderGallery() {
@@ -23,7 +87,7 @@ function renderGallery() {
     const button = document.createElement("button");
     button.className = "gallery-item";
     button.type = "button";
-    button.setAttribute("aria-label", `Deschide fotografia ${index + 1}`);
+    button.setAttribute("aria-label", `Deschide fotografia ${index + 1}: ${photo.description}`);
 
     const image = document.createElement("img");
     image.src = photo.src;
@@ -44,6 +108,7 @@ function renderGallery() {
 function openLightbox(index) {
   currentIndex = index;
   updateLightbox();
+  document.body.classList.add("is-lightbox-open");
 
   if (typeof lightbox.showModal === "function") {
     lightbox.showModal();
@@ -53,6 +118,8 @@ function openLightbox(index) {
 }
 
 function closeModal() {
+  document.body.classList.remove("is-lightbox-open");
+
   if (typeof lightbox.close === "function") {
     lightbox.close();
   } else {
@@ -64,7 +131,7 @@ function updateLightbox() {
   const photo = photos[currentIndex];
   lightboxImage.src = photo.src;
   lightboxImage.alt = photo.alt;
-  lightboxCaption.textContent = `Fotografia ${currentIndex + 1} din ${photoCount}`;
+  lightboxCaption.textContent = `Fotografia ${currentIndex + 1} din ${photoCount}: ${photo.description}`;
 }
 
 function movePhoto(direction) {
@@ -74,9 +141,23 @@ function movePhoto(direction) {
 
 renderGallery();
 
+if ("IntersectionObserver" in window) {
+  const galleryObserver = new IntersectionObserver(
+    ([entry]) => {
+      document.body.classList.toggle("is-gallery-active", entry.isIntersecting);
+    },
+    { threshold: 0.05 },
+  );
+
+  galleryObserver.observe(galleryBand);
+}
+
 closeLightbox.addEventListener("click", closeModal);
 prevPhoto.addEventListener("click", () => movePhoto(-1));
 nextPhoto.addEventListener("click", () => movePhoto(1));
+lightbox.addEventListener("close", () => {
+  document.body.classList.remove("is-lightbox-open");
+});
 
 lightbox.addEventListener("click", (event) => {
   if (event.target === lightbox) {

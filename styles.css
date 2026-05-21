@@ -20,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 112px;
 }
 
 body {
@@ -810,6 +811,14 @@ h3 {
   padding: 14px 18px;
   font-weight: 900;
   text-decoration: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.is-gallery-active .floating-whatsapp,
+.is-lightbox-open .floating-whatsapp {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(14px);
 }
 
 .lightbox {
@@ -887,9 +896,12 @@ h3 {
   }
 
   .hero-facts,
-  .amenity-grid,
-  .gallery-grid {
+  .amenity-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .intro-grid,
@@ -1008,12 +1020,39 @@ h3 {
     aspect-ratio: 1.6;
   }
 
+  .lightbox {
+    width: calc(100vw - 20px);
+    max-height: calc(100svh - 20px);
+  }
+
   .lightbox-frame {
-    grid-template-columns: 1fr;
+    position: relative;
+    display: block;
+    padding: 10px;
   }
 
   .lightbox-nav {
-    display: none;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: grid;
+    width: 40px;
+    height: 40px;
+    transform: translateY(-50%);
+    background: rgba(21, 19, 17, 0.72);
+    backdrop-filter: blur(10px);
+  }
+
+  #prevPhoto {
+    left: 18px;
+  }
+
+  #nextPhoto {
+    right: 18px;
+  }
+
+  .lightbox-frame img {
+    max-height: calc(100svh - 160px);
   }
 
   .floating-whatsapp {
