@@ -3,7 +3,7 @@ const photos = Array.from({ length: photoCount }, (_, index) => {
   const number = String(index + 1).padStart(2, "0");
   return {
     src: `assets/photos/photo-${number}.jpeg`,
-    alt: `Fotografie ${index + 1} din galeria Vila Nomad Brasov`,
+    alt: `Fotografie ${index + 1} din galeria Vila Nomad Brașov`,
   };
 });
 
