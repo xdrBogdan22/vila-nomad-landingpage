@@ -297,6 +297,75 @@ h3 {
   color: #fff;
 }
 
+.button-pay {
+  background: linear-gradient(135deg, #635bff 0%, #4f46e5 100%);
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(79, 70, 229, 0.32);
+}
+
+.button-pay:hover,
+.button-pay:focus-visible {
+  background: linear-gradient(135deg, #4f46e5 0%, #3d35cf 100%);
+  transform: translateY(-1px);
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  align-self: flex-start;
+}
+
+.button-whatsapp {
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.32);
+}
+
+.button-whatsapp:hover,
+.button-whatsapp:focus-visible {
+  background: #1ebe57;
+}
+
+.contact-button.button-pay {
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--ink);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.contact-button.button-pay:hover,
+.contact-button.button-pay:focus-visible {
+  background: #fff;
+  color: var(--ink);
+  border-color: #fff;
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.22);
+}
+
+.contact-button svg {
+  flex-shrink: 0;
+}
+
+.rule-cta {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.rule-cta a {
+  color: var(--orange-dark);
+  font-weight: 800;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(216, 91, 47, 0.3);
+  padding-bottom: 1px;
+  transition: border-color 0.18s ease, color 0.18s ease;
+}
+
+.rule-cta a:hover {
+  color: var(--orange);
+  border-bottom-color: var(--orange);
+}
+
 .muted .button-secondary,
 .location-layout .button-secondary {
   border-color: var(--line);
@@ -1224,12 +1293,20 @@ h3 {
 .contact-actions {
   display: grid;
   justify-items: start;
-  gap: 16px;
+  gap: 18px;
   border: 1px solid rgba(255, 255, 255, 0.26);
-  border-radius: 8px;
+  border-radius: 16px;
   background: rgba(255, 255, 255, 0.1);
   padding: clamp(24px, 5vw, 42px);
   backdrop-filter: blur(12px);
+  width: 100%;
+}
+
+.contact-cta-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 }
 
 .phone-link {
