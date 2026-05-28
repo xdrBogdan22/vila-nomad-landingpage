@@ -616,10 +616,49 @@ h3 {
   padding: clamp(22px, 3vw, 32px);
 }
 
+.room-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
 .room-block-info h3 {
   margin: 0;
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   line-height: 1.18;
+}
+
+.room-price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(19, 136, 127, 0.12) 0%, rgba(216, 139, 98, 0.12) 100%);
+  border: 1px solid rgba(19, 136, 127, 0.22);
+  padding: 8px 14px;
+  white-space: nowrap;
+}
+
+.room-price strong {
+  color: var(--ink);
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.room-price-label,
+.room-price-unit {
+  color: var(--muted-ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.room-price-label {
+  margin-right: 2px;
 }
 
 .room-block-info p {
