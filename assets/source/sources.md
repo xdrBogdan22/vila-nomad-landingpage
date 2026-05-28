@@ -10,7 +10,7 @@ Sources used while building this page:
 Included content:
 
 - Address: 24 Strada Traian, 500332 Brasov, Romania
-- Review score: 9.6 exceptional, 145 Booking reviews
+- Review score: 9.7 exceptional, 151 Booking reviews
 - Booking category scores: facilities 9.8, cleanliness 9.9, comfort 9.7, value 9.8, location 9.7, Wi-Fi 9.0, staff 9.8
 - Popular amenities: non-smoking rooms, parking, fast free Wi-Fi around 63 Mbps, family rooms, terrace, heating
 - Room details: Deluxe Double Room, queen bed, private bathroom, city view, flat-screen TV, soundproofing, desk, sitting area, dining area, wardrobe, towels, linens, heating and bathroom amenities

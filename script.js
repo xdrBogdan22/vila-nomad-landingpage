@@ -78,6 +78,9 @@ const closeLightbox = document.querySelector("#closeLightbox");
 const prevPhoto = document.querySelector("#prevPhoto");
 const nextPhoto = document.querySelector("#nextPhoto");
 const galleryBand = document.querySelector("#galerie");
+const guestReviewsTrack = document.querySelector("#guestReviewsTrack");
+const prevReview = document.querySelector("#prevReview");
+const nextReview = document.querySelector("#nextReview");
 let currentIndex = 0;
 
 function renderGallery() {
@@ -139,6 +142,21 @@ function movePhoto(direction) {
   updateLightbox();
 }
 
+function moveReview(direction) {
+  const firstCard = guestReviewsTrack?.querySelector(".guest-review-card");
+
+  if (!firstCard) {
+    return;
+  }
+
+  const gap = 16;
+  const distance = firstCard.getBoundingClientRect().width + gap;
+  guestReviewsTrack.scrollBy({
+    left: direction * distance,
+    behavior: "smooth",
+  });
+}
+
 renderGallery();
 
 if ("IntersectionObserver" in window) {
@@ -155,6 +173,8 @@ if ("IntersectionObserver" in window) {
 closeLightbox.addEventListener("click", closeModal);
 prevPhoto.addEventListener("click", () => movePhoto(-1));
 nextPhoto.addEventListener("click", () => movePhoto(1));
+prevReview?.addEventListener("click", () => moveReview(-1));
+nextReview?.addEventListener("click", () => moveReview(1));
 lightbox.addEventListener("close", () => {
   document.body.classList.remove("is-lightbox-open");
 });
