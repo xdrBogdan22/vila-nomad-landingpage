@@ -81,6 +81,7 @@ const galleryBand = document.querySelector("#galerie");
 const guestReviewsTrack = document.querySelector("#guestReviewsTrack");
 const prevReview = document.querySelector("#prevReview");
 const nextReview = document.querySelector("#nextReview");
+const roomGalleryTracks = Array.from(document.querySelectorAll("[data-room-gallery]"));
 let currentIndex = 0;
 
 function renderGallery() {
@@ -157,6 +158,77 @@ function moveReview(direction) {
   });
 }
 
+function setupRoomGallery(track) {
+  const name = track.dataset.roomGallery;
+  const figures = Array.from(track.children);
+
+  if (!figures.length) {
+    return;
+  }
+
+  const prevBtn = document.querySelector(`[data-room-gallery-prev="${name}"]`);
+  const nextBtn = document.querySelector(`[data-room-gallery-next="${name}"]`);
+  const dotsHost = document.querySelector(`[data-room-gallery-dots="${name}"]`);
+  let activeIdx = 0;
+
+  const dots = dotsHost
+    ? figures.map((_, idx) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "carousel-dot";
+        dot.setAttribute("aria-label", `Mergi la poza ${idx + 1}`);
+        dot.addEventListener("click", () => goTo(idx));
+        dotsHost.append(dot);
+        return dot;
+      })
+    : [];
+
+  function setActive(idx) {
+    activeIdx = Math.max(0, Math.min(figures.length - 1, idx));
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("is-active", i === activeIdx);
+    });
+  }
+
+  function goTo(idx) {
+    const target = figures[idx];
+    if (!target) return;
+    track.scrollTo({
+      left: target.offsetLeft - track.offsetLeft,
+      behavior: "smooth",
+    });
+    setActive(idx);
+  }
+
+  function move(direction) {
+    const next = (activeIdx + direction + figures.length) % figures.length;
+    goTo(next);
+  }
+
+  prevBtn?.addEventListener("click", () => move(-1));
+  nextBtn?.addEventListener("click", () => move(1));
+
+  let scrollTimer;
+  track.addEventListener("scroll", () => {
+    window.clearTimeout(scrollTimer);
+    scrollTimer = window.setTimeout(() => {
+      const trackLeft = track.scrollLeft;
+      let closest = 0;
+      let minDistance = Infinity;
+      figures.forEach((fig, idx) => {
+        const distance = Math.abs(fig.offsetLeft - track.offsetLeft - trackLeft);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closest = idx;
+        }
+      });
+      setActive(closest);
+    }, 80);
+  });
+
+  setActive(0);
+}
+
 renderGallery();
 
 if ("IntersectionObserver" in window) {
@@ -175,6 +247,8 @@ prevPhoto.addEventListener("click", () => movePhoto(-1));
 nextPhoto.addEventListener("click", () => movePhoto(1));
 prevReview?.addEventListener("click", () => moveReview(-1));
 nextReview?.addEventListener("click", () => moveReview(1));
+
+roomGalleryTracks.forEach(setupRoomGallery);
 lightbox.addEventListener("close", () => {
   document.body.classList.remove("is-lightbox-open");
 });
