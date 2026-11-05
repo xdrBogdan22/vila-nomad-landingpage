@@ -1325,6 +1325,7 @@ h3 {
 
 .site-footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 16px;
   background: var(--ink);
