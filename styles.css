@@ -34,6 +34,7 @@ body {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -191,7 +192,7 @@ a {
   position: absolute;
   inset: 0;
   z-index: -3;
-  background-image: url("assets/photos/photo-02.jpeg");
+  background-image: url("assets/photos/vila-nomad-brasov-camera-dubla-cu-pat-queen-si-prosoape-pregatite-02.jpeg");
   background-position: center;
   background-size: cover;
   transform: scale(1.02);
@@ -1285,7 +1286,7 @@ h3 {
 .contact-band {
   background:
     linear-gradient(90deg, rgba(40, 37, 34, 0.8), rgba(40, 37, 34, 0.56)),
-    url("assets/photos/photo-01.jpeg") center / cover;
+    url("assets/photos/vila-nomad-brasov-colt-de-relaxare-cu-fotolii-si-plante-01.jpeg") center / cover;
   color: #fff;
 }
 
@@ -1651,4 +1652,81 @@ h3 {
   .floating-whatsapp {
     display: none;
   }
+}
+
+.article-page {
+  padding-top: 72px;
+}
+
+.article-body {
+  width: min(100%, 760px);
+}
+
+.article-body h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+}
+
+.article-body h2 {
+  margin: 40px 0 12px;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.article-body p,
+.article-body li {
+  color: var(--muted-ink);
+  font-size: 1.04rem;
+}
+
+.article-body figure {
+  margin: 28px 0;
+}
+
+.article-body figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.article-body figcaption,
+.article-date,
+.article-crumbs {
+  color: var(--muted-ink);
+  font-size: 0.9rem;
+}
+
+.article-table {
+  overflow-x: auto;
+}
+
+.article-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.article-table caption {
+  margin-bottom: 8px;
+  color: var(--muted-ink);
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.article-table th,
+.article-table td {
+  padding: 10px 12px 10px 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.article-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.article-table + p {
+  margin-top: 20px;
 }
