@@ -192,7 +192,7 @@ a {
   position: absolute;
   inset: 0;
   z-index: -3;
-  background-image: url("assets/photos/vila-nomad-brasov-camera-dubla-cu-pat-queen-si-prosoape-pregatite-02.jpeg");
+  background-image: url("assets/photos/vila-nomad-brasov-camera-dubla-cu-pat-queen-si-prosoape-pregatite-02.webp");
   background-position: center;
   background-size: cover;
   transform: scale(1.02);
@@ -637,7 +637,6 @@ h3 {
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   padding: 4px 2px 14px;
-  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   border-radius: 22px;
@@ -999,7 +998,6 @@ h3 {
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   padding: 8px 2px 22px;
-  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
 }
@@ -1286,7 +1284,7 @@ h3 {
 .contact-band {
   background:
     linear-gradient(90deg, rgba(40, 37, 34, 0.8), rgba(40, 37, 34, 0.56)),
-    url("assets/photos/vila-nomad-brasov-colt-de-relaxare-cu-fotolii-si-plante-01.jpeg") center / cover;
+    url("assets/photos/vila-nomad-brasov-colt-de-relaxare-cu-fotolii-si-plante-01.webp") center / cover;
   color: #fff;
 }
 

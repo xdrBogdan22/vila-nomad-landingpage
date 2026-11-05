@@ -1,0 +1,4 @@
+Contact: tel:+40722292023
+Expires: 2027-11-05T00:00:00.000Z
+Preferred-Languages: ro, en
+Canonical: https://www.vilanomad.ro/.well-known/security.txt
