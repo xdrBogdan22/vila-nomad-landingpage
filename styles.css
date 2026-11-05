@@ -368,7 +368,8 @@ h3 {
 }
 
 .muted .button-secondary,
-.location-layout .button-secondary {
+.location-layout .button-secondary,
+.article-cta .button-secondary {
   border-color: var(--line);
   background: #fff;
   color: var(--ink);
@@ -1727,4 +1728,13 @@ h3 {
 
 .article-table + p {
   margin-top: 20px;
+}
+
+.not-found-page {
+  display: flex;
+  min-height: calc(100vh - 68px);
+}
+
+.not-found-page > article {
+  flex: 1;
 }
