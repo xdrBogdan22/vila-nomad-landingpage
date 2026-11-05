@@ -33,7 +33,7 @@
         "@id": "https://www.vilanomad.ro/#vila-nomad-brasov",
         "url": "https://www.vilanomad.ro/",
         "name": "Vila Nomad",
-        "alternateName": "Cazare Vila Nomad Brașov",
+        "alternateName": ["Pensiunea Vila Nomad", "Cazare Vila Nomad Brașov"],
         "description": "Pensiune în Brașov, pe Strada Traian 24, la 3-6 minute pe jos de Spitalul Clinic Județean de Urgență Brașov, cu camere de familie, băi private, Wi-Fi rapid, terasă, living comun și rezervare directă pe WhatsApp.",
         "image": [
           "https://www.vilanomad.ro/assets/photos/vila-nomad-brasov-camera-dubla-cu-pat-queen-si-prosoape-pregatite-02.jpeg",
@@ -68,12 +68,37 @@
           "postalCode": "500332",
           "addressCountry": "RO"
         },
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "name": "Cameră dublă deluxe",
+            "priceSpecification": { "@type": "UnitPriceSpecification", "minPrice": 250, "priceCurrency": "RON", "unitText": "noapte" },
+            "itemOffered": {
+              "@type": "HotelRoom",
+              "name": "Cameră dublă deluxe",
+              "occupancy": { "@type": "QuantitativeValue", "maxValue": 2 },
+              "floorSize": { "@type": "QuantitativeValue", "value": 18, "unitCode": "MTK" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Cameră dublă deluxe cu balcon",
+            "priceSpecification": { "@type": "UnitPriceSpecification", "minPrice": 275, "priceCurrency": "RON", "unitText": "noapte" },
+            "itemOffered": {
+              "@type": "HotelRoom",
+              "name": "Cameră dublă deluxe cu balcon",
+              "occupancy": { "@type": "QuantitativeValue", "maxValue": 2 },
+              "floorSize": { "@type": "QuantitativeValue", "value": 24, "unitCode": "MTK" }
+            }
+          }
+        ],
         "amenityFeature": [
           { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuit rapid", "value": true },
           { "@type": "LocationFeatureSpecification", "name": "Camere de familie", "value": true },
           { "@type": "LocationFeatureSpecification", "name": "Terasă la soare", "value": true },
           { "@type": "LocationFeatureSpecification", "name": "Camere izolate fonic", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Parcare stradală", "value": true }
+          { "@type": "LocationFeatureSpecification", "name": "Parcare stradală", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Telefon non-stop", "value": true }
         ]
       }
     </script>
@@ -136,6 +161,70 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Vila Nomad se află pe Strada Traian 24, la 3-6 minute pe jos de Spitalul Clinic Județean de Urgență Brașov, în funcție de intrarea folosită."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Cât costă o noapte la Vila Nomad?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Camera dublă deluxe costă de la 250 RON pe noapte, iar camera dublă deluxe cu balcon de la 275 RON pe noapte. La tarif se adaugă taxa de oraș de 12 RON pe zi."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Prețul este pe cameră sau pe persoană?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Prețul este pe cameră, nu pe persoană. Dacă vii singur, plătești tariful afișat al camerei."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Există parcare la Vila Nomad?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Da. Parcarea este stradală: un loc este gratuit, iar restul locurilor sunt plătite."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Pot ajunge după ora 22:00?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Da. Check-in-ul obișnuit este între 15:00 și 22:00, dar poți sosi și după ora 22:00 dacă anunți ora sosirii."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Există un telefon disponibil non-stop?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Da. Ne poți suna non-stop la +40 722 292 023."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Există un sejur minim?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nu. Poți rezerva și pentru o singură noapte."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Este Vila Nomad potrivită pentru aparținătorii pacienților?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Da. Vila Nomad este la 3-6 minute pe jos de Spitalul Clinic Județean de Urgență Brașov, în funcție de intrarea folosită, nu are sejur minim, iar sosirea după ora 22:00 este posibilă. Vila Nomad nu este afiliată spitalului."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Cum pot plăti?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Poți plăti numerar, cu cardul, prin transfer bancar sau cu carduri de vacanță."
             }
           }
         ]
@@ -377,7 +466,8 @@
               <h3>Top facilități</h3>
               <ul>
                 <li>Wi-Fi gratuit rapid, aproximativ 63 Mbps</li>
-                <li>Parcare stradală</li>
+                <li>Parcare stradală, un loc gratuit</li>
+                <li>Telefon non-stop</li>
                 <li>Camere de familie</li>
                 <li>Terasă și curte</li>
                 <li>Încălzire și aer condiționat</li>
@@ -601,7 +691,7 @@
           <div class="rule-list">
             <article>
               <h3>Sosire și plecare</h3>
-              <p>Check-in între 15:00 și 22:00. Check-out între 08:00 și 11:00. Proprietatea trebuie anunțată în avans cu ora sosirii.</p>
+              <p>Check-in între 15:00 și 22:00. Check-out între 08:00 și 11:00. Proprietatea trebuie anunțată în avans cu ora sosirii. Sosirea după ora 22:00 este posibilă.</p>
             </article>
             <article>
               <h3>Copii</h3>
@@ -659,6 +749,38 @@
             <article>
               <h3>Cât de aproape este Vila Nomad de Spitalul Județean Brașov?</h3>
               <p>Vila Nomad se află pe Strada Traian 24, la 3-6 minute pe jos de Spitalul Clinic Județean de Urgență Brașov, în funcție de intrarea folosită.</p>
+            </article>
+            <article>
+              <h3>Cât costă o noapte la Vila Nomad?</h3>
+              <p>Camera dublă deluxe costă de la 250 RON pe noapte, iar camera dublă deluxe cu balcon de la 275 RON pe noapte. La tarif se adaugă taxa de oraș de 12 RON pe zi.</p>
+            </article>
+            <article>
+              <h3>Prețul este pe cameră sau pe persoană?</h3>
+              <p>Prețul este pe cameră, nu pe persoană. Dacă vii singur, plătești tariful afișat al camerei.</p>
+            </article>
+            <article>
+              <h3>Există parcare la Vila Nomad?</h3>
+              <p>Da. Parcarea este stradală: un loc este gratuit, iar restul locurilor sunt plătite.</p>
+            </article>
+            <article>
+              <h3>Pot ajunge după ora 22:00?</h3>
+              <p>Da. Check-in-ul obișnuit este între 15:00 și 22:00, dar poți sosi și după ora 22:00 dacă anunți ora sosirii.</p>
+            </article>
+            <article>
+              <h3>Există un telefon disponibil non-stop?</h3>
+              <p>Da. Ne poți suna non-stop la +40 722 292 023.</p>
+            </article>
+            <article>
+              <h3>Există un sejur minim?</h3>
+              <p>Nu. Poți rezerva și pentru o singură noapte.</p>
+            </article>
+            <article>
+              <h3>Este Vila Nomad potrivită pentru aparținătorii pacienților?</h3>
+              <p>Da. Vila Nomad este la 3-6 minute pe jos de Spitalul Clinic Județean de Urgență Brașov, în funcție de intrarea folosită, nu are sejur minim, iar sosirea după ora 22:00 este posibilă. Vila Nomad nu este afiliată spitalului.</p>
+            </article>
+            <article>
+              <h3>Cum pot plăti?</h3>
+              <p>Poți plăti numerar, cu cardul, prin transfer bancar sau cu carduri de vacanță.</p>
             </article>
           </div>
         </div>
